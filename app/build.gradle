@@ -8,6 +8,9 @@ apply plugin: 'androidx.navigation.safeargs'
 android {
     compileSdkVersion 29
     buildToolsVersion "29.0.2"
+    dataBinding {
+        enabled = true
+    }
     defaultConfig {
         applicationId "com.suadahaji.notify"
         minSdkVersion 19
