@@ -15,6 +15,7 @@ android {
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        vectorDrawables.useSupportLibrary = true
     }
     buildTypes {
         release {
@@ -26,7 +27,7 @@ android {
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-    implementation"org.jetbrains.kotlin:kotlin-stdlib-jdk7:$version_kotlin"
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$version_kotlin"
     implementation "androidx.core:core-ktx:$version_core"
 
     // Support libraries
@@ -47,6 +48,8 @@ dependencies {
     implementation "androidx.navigation:navigation-fragment-ktx:$version_navigation"
     implementation "androidx.navigation:navigation-ui-ktx:$version_navigation"
 
+    implementation 'com.intuit.sdp:sdp-android:1.0.5'
+    implementation 'com.intuit.ssp:ssp-android:1.0.5'
 
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test:runner:1.2.0'
