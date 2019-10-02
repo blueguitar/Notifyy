@@ -19,7 +19,7 @@ class SplashActivity : AppCompatActivity() {
         setContentView(R.layout.activity_splash)
         Handler().postDelayed({
             startActivity(Intent(this, MainActivity::class.java))
-            overridePendingTransition(R.anim.fadein, R.anim.fadeout)
+            overridePendingTransition(R.anim.fade_in, R.anim.fade_out)
         }, 1000)
 
     }
