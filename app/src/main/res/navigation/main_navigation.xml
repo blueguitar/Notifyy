@@ -6,7 +6,7 @@
 
     <fragment
         android:id="@+id/notesList"
-        android:name="com.suadahaji.notify.notes.NotesList"
+        android:name="com.suadahaji.notify.listnotes.NotesList"
         android:label="NotesList" >
         <action
             android:id="@+id/action_notesList_to_editNote"
@@ -18,7 +18,7 @@
     </fragment>
     <fragment
         android:id="@+id/editNote"
-        android:name="com.suadahaji.notify.notes.EditNote"
+        android:name="com.suadahaji.notify.editnote.EditNote"
         android:label="EditNote" >
         <action
             android:id="@+id/action_editNote_to_notesList"

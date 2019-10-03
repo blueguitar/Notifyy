@@ -1,10 +1,9 @@
-package com.suadahaji.notify.notes
+package com.suadahaji.notify.listnotes
 
 import android.os.Bundle
 import android.view.*
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
-import androidx.navigation.findNavController
 import androidx.navigation.fragment.findNavController
 import com.suadahaji.notify.R
 import com.suadahaji.notify.databinding.FragmentNotesListBinding

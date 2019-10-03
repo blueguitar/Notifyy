@@ -1,4 +1,4 @@
-package com.suadahaji.notify.notes
+package com.suadahaji.notify.editnote
 
 import android.app.Activity
 import android.os.Bundle
