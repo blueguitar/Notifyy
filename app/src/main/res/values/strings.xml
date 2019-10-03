@@ -9,4 +9,5 @@
     <string name="delete">Delete Note</string>
     <string name="new_note_tag">newnote</string>
     <string name="update_note_tag">updatenote</string>
+    <string name="share_note">%1$s \n %2$s</string>
 </resources>
