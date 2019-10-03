@@ -3,7 +3,9 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <data>
-
+        <variable
+            name="notesListViewModel"
+            type="com.suadahaji.notify.listnotes.NotesListViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout

@@ -6,8 +6,8 @@
 
     <fragment
         android:id="@+id/notesList"
-        android:name="com.suadahaji.notify.listnotes.NotesList"
-        android:label="NotesList" >
+        android:name="com.suadahaji.notify.listnotes.NotesListFragment"
+        android:label="@string/home_page" >
         <action
             android:id="@+id/action_notesList_to_editNote"
             app:destination="@id/editNote"
@@ -18,8 +18,14 @@
     </fragment>
     <fragment
         android:id="@+id/editNote"
-        android:name="com.suadahaji.notify.editnote.EditNote"
-        android:label="EditNote" >
+        android:name="com.suadahaji.notify.editnote.EditNoteFragment"
+        android:label=" " >
+        <argument
+            android:name="noteId"
+            app:argType="long" />
+        <argument
+            android:name="noteTag"
+            app:argType="string" />
         <action
             android:id="@+id/action_editNote_to_notesList"
             app:destination="@id/notesList"

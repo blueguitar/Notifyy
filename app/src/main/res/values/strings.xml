@@ -7,4 +7,6 @@
     <string name="note_title">Title</string>
     <string name="share">Share Note</string>
     <string name="delete">Delete Note</string>
+    <string name="new_note_tag">newnote</string>
+    <string name="update_note_tag">updatenote</string>
 </resources>
