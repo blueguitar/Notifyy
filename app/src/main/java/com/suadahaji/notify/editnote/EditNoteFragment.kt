@@ -129,11 +129,12 @@ class EditNoteFragment : Fragment() {
             } else {
                 editNoteViewModel.onInsertNote(note_title, note_content)
             }
-            noteTitle.clearFocus()
-            noteContent.clearFocus()
-            displayContextMenu(false)
             showSaveMenu(false)
         }
+
+        noteTitle.clearFocus()
+        noteContent.clearFocus()
+        displayContextMenu(false)
     }
 
     override fun onPrepareOptionsMenu(menu: Menu) {
