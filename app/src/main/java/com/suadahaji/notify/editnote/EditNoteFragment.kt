@@ -1,6 +1,7 @@
 package com.suadahaji.notify.editnote
 
 import android.app.Activity
+import android.content.Intent
 import android.os.Bundle
 import android.view.*
 import android.view.inputmethod.InputMethodManager
@@ -105,6 +106,14 @@ class EditNoteFragment : Fragment() {
             R.id.delete -> {
                 editNoteViewModel.onDeleteNote()
             }
+            R.id.share -> {
+                val shareIntent : Intent = Intent().apply {
+                    action = Intent.ACTION_SEND
+                    putExtra(Intent.EXTRA_TEXT, note?.noteTitle +"\n" + note?.noteContent)
+                    type = "text/plain"
+                }
+                startActivity(Intent.createChooser(shareIntent, note?.noteTitle))
+            }
             R.id.save -> {
                 saveNote(noteTitle.text.toString(), noteContent.text.toString())
             }
@@ -120,11 +129,12 @@ class EditNoteFragment : Fragment() {
             } else {
                 editNoteViewModel.onInsertNote(note_title, note_content)
             }
-            noteTitle.clearFocus()
-            noteContent.clearFocus()
-            displayContextMenu(false)
             showSaveMenu(false)
         }
+
+        noteTitle.clearFocus()
+        noteContent.clearFocus()
+        displayContextMenu(false)
     }
 
     override fun onPrepareOptionsMenu(menu: Menu) {
