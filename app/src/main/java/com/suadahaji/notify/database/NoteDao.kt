@@ -1,10 +1,7 @@
 package com.suadahaji.notify.database
 
 import androidx.lifecycle.LiveData
-import androidx.room.Dao
-import androidx.room.Insert
-import androidx.room.Query
-import androidx.room.Update
+import androidx.room.*
 
 @Dao
 interface NoteDao {
@@ -22,4 +19,13 @@ interface NoteDao {
 
     @Query("SELECT * FROM notes ORDER BY created_on DESC")
     fun getAllNotes(): LiveData<List<Note>>
+
+    @Query("SELECT * FROM notes ORDER BY noteId DESC LIMIT 1")
+    fun getNote(): Note?
+
+    @Query("DELETE FROM notes")
+    fun deleteAllNotes()
+
+    @Delete
+    fun deleteNoteById(note: Note)
 }
