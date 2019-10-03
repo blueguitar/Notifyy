@@ -3,4 +3,8 @@
     <string name="home_page">My Notes</string>
     <string name="search">Search</string>
     <string name="save">savenote</string>
+    <string name="note_content">Content</string>
+    <string name="note_title">Title</string>
+    <string name="share">Share Note</string>
+    <string name="delete">Delete Note</string>
 </resources>
