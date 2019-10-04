@@ -13,6 +13,7 @@ buildscript {
         version_navigation = "2.1.0"
         version_room = "2.2.0-rc01"
         version_appcompat = "1.1.0-rc01"
+        version_cardview = "1.0.0-alpha1"
         version_fragment = "1.1.0"
     }
     repositories {

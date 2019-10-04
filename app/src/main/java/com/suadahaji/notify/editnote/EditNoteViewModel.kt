@@ -8,15 +8,17 @@ import com.suadahaji.notify.database.Note
 import com.suadahaji.notify.database.NoteDao
 import kotlinx.coroutines.*
 
-class EditNoteViewModel(val dataSource: NoteDao,
-                        application: Application): AndroidViewModel(application)  {
+class EditNoteViewModel(
+    val dataSource: NoteDao,
+    application: Application
+) : AndroidViewModel(application) {
 
     private var viewModelJob = Job()
     private val uiScope = CoroutineScope(Dispatchers.Main + viewModelJob)
 
     private var _note = MutableLiveData<Note>()
     val note: LiveData<Note>
-    get() = _note
+        get() = _note
 
     private val _navigateToNotesLists = MutableLiveData<Boolean?>()
     val navigateToNotesLists: LiveData<Boolean?>
@@ -60,9 +62,22 @@ class EditNoteViewModel(val dataSource: NoteDao,
         }
     }
 
+    private suspend fun getNote(key: Long): Note? {
+        return withContext(Dispatchers.IO) {
+             dataSource.getNoteById(key)
+        }
+    }
+
+    fun getNoteById(key: Long) {
+        uiScope.launch {
+            getNote(key)
+            _note.value = getNote(key)
+        }
+    }
+
     fun onInsertNote(noteTitle: String, noteContent: String) {
         uiScope.launch {
-            val newNote = Note(noteTitle = noteTitle, noteContent = noteContent )
+            val newNote = Note(noteTitle = noteTitle, noteContent = noteContent)
             insert(newNote)
             _note.value = getNoteFromDatabase()
         }
