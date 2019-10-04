@@ -95,8 +95,6 @@ class EditNoteViewModel(val dataSource: NoteDao,
         }
     }
 
-
-
     override fun onCleared() {
         super.onCleared()
         viewModelJob.cancel()

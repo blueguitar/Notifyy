@@ -8,6 +8,7 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import androidx.navigation.fragment.findNavController
+import androidx.recyclerview.widget.GridLayoutManager
 import com.suadahaji.notify.R
 import com.suadahaji.notify.database.NotesDatabase
 import com.suadahaji.notify.databinding.FragmentNotesListBinding
@@ -32,7 +33,12 @@ class NotesListFragment: Fragment() {
         val notesListViewModel = ViewModelProviders.of(this, viewModelFactory).get(NotesListViewModel::class.java)
 
         binding.notesListViewModel = notesListViewModel
+
         binding.setLifecycleOwner(this)
+
+        val manager = GridLayoutManager(activity, 2)
+
+        binding.noteList.layoutManager = manager
 
         notesListViewModel.notes.observe(viewLifecycleOwner, Observer {
             it?.let {
