@@ -15,61 +15,70 @@
 
     </data>
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="@dimen/_150sdp"
-        android:layout_height="match_parent"
-        android:onClick="@{() -> clickListener.onClick(note)}"
-        android:paddingStart="@dimen/_10sdp"
-        android:paddingEnd="@dimen/_10sdp">
+    <androidx.cardview.widget.CardView
+        android:layout_width="@dimen/_140sdp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:layout_marginStart="@dimen/_10sdp"
+        android:background="@drawable/card_bg">
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="@dimen/_6sdp"
+            android:onClick="@{() -> clickListener.onClick(note)}">
 
-        <TextView
-            android:id="@+id/noteTitle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:ellipsize="end"
-            android:fontFamily="sans-serif-medium"
-            android:lines="1"
-            android:textSize="@dimen/_12ssp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:noteTitle="@{note}"
-            tools:text="Amount Pay" />
+            <TextView
+                android:id="@+id/noteTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:fontFamily="sans-serif-medium"
+                android:lines="1"
+                android:textSize="@dimen/_12ssp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:noteTitle="@{note}"
+                tools:text="Amount Pay" />
 
-        <TextView
-            android:id="@+id/noteContent"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/_5sdp"
-            android:ellipsize="end"
-            android:fontFamily="sans-serif-medium"
-            android:lines="5"
-            android:textSize="@dimen/_10ssp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/noteTitle"
-            app:nnoteContent="@{note}"
-            tools:text="There are numerous success stories you will hear about businesses making it good. There are numerous success stories you will hear about businesses making it" />
+            <TextView
+                android:id="@+id/noteContent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:ellipsize="end"
+                android:fontFamily="sans-serif-light"
+                android:maxLines="5"
+                android:textSize="@dimen/_10ssp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/noteTitle"
+                app:noteContent="@{note}"
+                tools:text="There are numerous success stories you will hear about businesses making it good. There are numerous success stories you will hear about businesses making it" />
 
-        <TextView
-            android:id="@+id/noteDate"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/_5sdp"
-            android:fontFamily="sans-serif-medium"
-            android:textSize="@dimen/_10ssp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/noteContent"
-            app:noteDate="@{note}"
-            tools:text="22.10.2019" />
+            <TextView
+                android:id="@+id/noteDate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:fontFamily="sans-serif-medium"
+                android:textSize="@dimen/_10ssp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/noteContent"
+                app:noteDate="@{note}"
+                tools:text="22.10.2019" />
 
-        <TextView
-            android:id="@+id/noteTime"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:fontFamily="sans-serif-medium"
-            android:textSize="@dimen/_10ssp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/noteDate"
-            app:noteTime="@{note}"
-            tools:text="10:33 am" />
-    </androidx.constraintlayout.widget.ConstraintLayout>
+            <TextView
+                android:id="@+id/noteTime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-medium"
+                android:textSize="@dimen/_10ssp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/noteDate"
+                app:noteTime="@{note}"
+                tools:text="10:33 am" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+
+
 </layout>

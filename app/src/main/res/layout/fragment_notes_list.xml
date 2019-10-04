@@ -14,16 +14,16 @@
         android:layout_height="match_parent"
         android:background="@android:color/white">
 
-        <include
-            layout="@layout/empty_state_notes" />
-
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/note_list"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/_10sdp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
+            android:paddingBottom="@dimen/_10sdp"
+
             />
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
@@ -35,5 +35,9 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:srcCompat="@drawable/ic_plus" />
+
+        <include
+            android:id="@+id/included"
+            layout="@layout/empty_state_notes" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

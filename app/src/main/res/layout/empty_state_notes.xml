@@ -3,7 +3,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:gravity="center">
+    android:gravity="center"
+    android:id="@+id/emptyState">
 
     <ImageView
         android:layout_width="@dimen/_100sdp"
@@ -13,7 +14,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="You have no notes yet"
+        android:text="@string/note_title_text"
         android:fontFamily="sans-serif-medium"
         android:textColor="@color/colorText"
         android:textSize="@dimen/_12ssp"/>
@@ -23,5 +24,5 @@
         android:layout_height="wrap_content"
         android:fontFamily="sans-serif-light"
         android:textColor="@color/colorText"
-        android:text="Tap + button to add a new note" />
+        android:text="@string/note_content_text" />
 </LinearLayout>

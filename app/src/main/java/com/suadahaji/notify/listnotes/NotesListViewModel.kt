@@ -17,6 +17,7 @@ class NotesListViewModel(
     private val uiScope = CoroutineScope(Dispatchers.Main + viewModelJob)
 
     private var note = MutableLiveData<Note?>()
+
     val notes = dataSource.getAllNotes()
 
     private val _navigateToEditNote = MutableLiveData<Note>()
@@ -45,6 +46,18 @@ class NotesListViewModel(
             }
             note
         }
+    }
+
+    private val _navigatetoUpdateNote = MutableLiveData<Long>()
+    val navigatetoUpdateNote
+    get() = _navigatetoUpdateNote
+
+    fun onNoteClicked(id: Long) {
+        _navigatetoUpdateNote.value = id
+    }
+
+    fun onNoteUpdateNavigated() {
+        _navigatetoUpdateNote.value = null
     }
 
     override fun onCleared() {

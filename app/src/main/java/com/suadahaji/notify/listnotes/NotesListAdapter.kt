@@ -10,8 +10,6 @@ import com.suadahaji.notify.databinding.NoteItemViewBinding
 
 class NotesListAdapter(val clickListener: NoteClickListener) : ListAdapter<Note, NotesListAdapter.NoteViewHolder>(NoteDiffCallback()) {
 
-
-
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): NoteViewHolder {
         return NoteViewHolder.from(parent)
     }

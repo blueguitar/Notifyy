@@ -30,7 +30,7 @@ fun TextView.setNoteDate(item: Note?) {
 @BindingAdapter("noteTime")
 fun TextView.setNoteTime(item: Note?) {
     item?.let {
-        text = convertLongToDateString(item.updatedDate)
+        text = convertLongToTimeString(item.updatedDate)
     }
 }
 
@@ -42,6 +42,6 @@ fun convertLongToDateString(systemTime: Long): String {
 
 @SuppressLint("SimpleTimeFormat")
 fun convertLongToTimeString(systemTime: Long): String {
-    return SimpleDateFormat("HH:mm")
+    return SimpleDateFormat("hh:mm a")
         .format(systemTime).toString()
 }

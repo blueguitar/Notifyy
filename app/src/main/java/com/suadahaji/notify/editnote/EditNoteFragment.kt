@@ -4,8 +4,10 @@ import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
 import android.view.*
+import android.view.View.OnFocusChangeListener
 import android.view.inputmethod.InputMethodManager
 import android.widget.EditText
+import android.widget.TextView
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
@@ -50,12 +52,15 @@ class EditNoteFragment : Fragment() {
         if (noteTag.equals(resources.getString(R.string.update_note_tag))) {
             isNewNote = false
             noteId = arguments.noteId
+            displayContextMenu(false)
+            editNoteViewModel.getNoteById(noteId)
         } else {
             displayContextMenu(true)
             noteTitle.requestFocus()
-            hasFocus(noteTitle)
-            hasFocus(noteContent)
         }
+
+        setOnFocusChangeListener(noteTitle)
+        setOnFocusChangeListener(noteContent)
 
         binding.editNoteViewModel = editNoteViewModel
         binding.lifecycleOwner = this
@@ -63,6 +68,8 @@ class EditNoteFragment : Fragment() {
         editNoteViewModel.note.observe(viewLifecycleOwner, Observer {
             it?.let {
                 note = it
+                noteTitle.setText(note?.noteTitle)
+                noteContent.setText(note?.noteContent)
             }
         })
 
@@ -73,14 +80,6 @@ class EditNoteFragment : Fragment() {
             }
         })
         return binding.root
-    }
-
-    private fun hasFocus(editText: EditText) {
-        editText.setOnFocusChangeListener { view, hasFocus ->
-            if (hasFocus)
-                showSaveMenu(true)
-            displayContextMenu(true)
-        }
     }
 
     private fun displayContextMenu(showKeyboard: Boolean) {
@@ -107,9 +106,9 @@ class EditNoteFragment : Fragment() {
                 editNoteViewModel.onDeleteNote()
             }
             R.id.share -> {
-                val shareIntent : Intent = Intent().apply {
+                val shareIntent: Intent = Intent().apply {
                     action = Intent.ACTION_SEND
-                    putExtra(Intent.EXTRA_TEXT, note?.noteTitle +"\n" + note?.noteContent)
+                    putExtra(Intent.EXTRA_TEXT, note?.noteTitle + "\n" + note?.noteContent)
                     type = "text/plain"
                 }
                 startActivity(Intent.createChooser(shareIntent, note?.noteTitle))
@@ -160,5 +159,15 @@ class EditNoteFragment : Fragment() {
     override fun onDestroyView() {
         super.onDestroyView()
         saveNote(noteTitle.text.toString(), noteContent.text.toString())
+    }
+
+    private fun setOnFocusChangeListener(textView: TextView) {
+        textView.onFocusChangeListener = OnFocusChangeListener { _, hasFocus ->
+            if (hasFocus) {
+                showSaveMenu(true)
+                displayContextMenu(true)
+
+            }
+        }
     }
 }
