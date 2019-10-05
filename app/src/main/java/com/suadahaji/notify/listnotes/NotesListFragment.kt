@@ -87,10 +87,15 @@ class NotesListFragment: Fragment() {
 
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
         super.onCreateOptionsMenu(menu, inflater)
-        inflater?.inflate(R.menu.main_menu, menu)
+        inflater.inflate(R.menu.main_menu, menu)
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when(item.itemId) {
+            R.id.search_icon -> {
+                this.findNavController().navigate(NotesListFragmentDirections.actionNotesListToSearchFragment())
+            }
+        }
         return super.onOptionsItemSelected(item)
     }
 }
