@@ -20,6 +20,11 @@ class NotesListViewModel(
 
     val notes = dataSource.getAllNotes()
 
+    private var _searchNotes = MutableLiveData<List<Note>>()
+    val searchNotes: LiveData<List<Note>>
+    get() = _searchNotes
+
+
     private val _navigateToEditNote = MutableLiveData<Note>()
     val navigateToEditNote: LiveData<Note>
     get() = _navigateToEditNote
@@ -35,6 +40,19 @@ class NotesListViewModel(
     private fun initializeTonight() {
         uiScope.launch {
             note.value = getNoteFromDatabase()
+        }
+    }
+
+    private suspend fun searchNote(searchWord: String): List<Note> {
+        return withContext(Dispatchers.IO) {
+            dataSource.searchNotes(searchWord)
+        }
+    }
+
+    fun searchAllNotes(searchWord: String) {
+        uiScope.launch {
+            searchNote(searchWord)
+            _searchNotes.value = searchNote(searchWord)
         }
     }
 

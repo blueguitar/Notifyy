@@ -20,6 +20,9 @@ interface NoteDao {
     @Query("SELECT * FROM notes ORDER BY updated_on DESC")
     fun getAllNotes(): LiveData<List<Note>>
 
+    @Query("SELECT * FROM notes WHERE note_title LIKE :searchWord OR note_content LIKE :searchWord  ORDER BY updated_on DESC")
+    fun searchNotes(searchWord: String): List<Note>
+
     @Query("SELECT * FROM notes ORDER BY noteId DESC LIMIT 1")
     fun getNote(): Note?
 
