@@ -1,6 +1,6 @@
 # Notify App
 
-### Some of the cool stuff I'll be integrating in this project:
+### Some of the cool stuff I've integrated in this project:
 1. Data Binding
 2. UI layout design using ConstraintLayout
 3. App Navigation -- Using multiple fragments and conditional navigation
