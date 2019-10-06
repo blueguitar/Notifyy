@@ -10,6 +10,12 @@
     2. Data persistence using **Room**
 6. RecyclerView -- to is efficiently reuse views
 
+
+| ![Image of Yaktocat](https://github.com/suada-haji/Notify/blob/develop/screenshots/display_home.png) | ![Image of Yaktocat](https://github.com/suada-haji/Notify/blob/develop/screenshots/display_note.png) | ![Image of Yaktocat](https://github.com/suada-haji/Notify/blob/develop/screenshots/edit_note.png) |
+| :---         |     :---:      |          ---: |
+| ![Image of Yaktocat](https://github.com/suada-haji/Notify/blob/develop/screenshots/share_note.png)   | ![Image of Yaktocat](https://github.com/suada-haji/Notify/blob/develop/screenshots/search_fragment.png)     | ![Image of Yaktocat](https://github.com/suada-haji/Notify/blob/develop/screenshots/search_text.png)    |
+
+
 ### License
 
 ```sh
