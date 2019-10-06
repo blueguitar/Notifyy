@@ -13,4 +13,5 @@
     <string name="note_title_text">You have no notes yet</string>
     <string name="note_content_text">Tap + button to add a new note</string>
     <string name="search_query">search-query</string>
+    <string name="delete_note">delete</string>
 </resources>

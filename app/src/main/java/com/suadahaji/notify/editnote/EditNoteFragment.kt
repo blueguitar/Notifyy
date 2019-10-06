@@ -8,6 +8,7 @@ import android.view.View.OnFocusChangeListener
 import android.view.inputmethod.InputMethodManager
 import android.widget.EditText
 import android.widget.TextView
+import androidx.appcompat.app.AlertDialog
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
@@ -103,7 +104,18 @@ class EditNoteFragment : Fragment() {
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {
             R.id.delete -> {
-                editNoteViewModel.onDeleteNote()
+
+                val builder = AlertDialog.Builder(activity!!)
+                builder.setTitle("Delete")
+                builder.setMessage("This note will deleted")
+                builder.setPositiveButton(getString(R.string.delete_note)) { dialog, which ->
+                    editNoteViewModel.onDeleteNote()
+                }
+
+                builder.setNegativeButton(android.R.string.no) { _, _ ->
+                }
+
+                builder.show()
             }
             R.id.share -> {
                 val shareIntent: Intent = Intent().apply {
