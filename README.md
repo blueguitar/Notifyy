@@ -22,7 +22,6 @@ User is able to :
 | ![](https://github.com/suada-haji/Notify/blob/develop/screenshots/splash_screen.png) | ![](https://github.com/suada-haji/Notify/blob/develop/screenshots/empty_state.png) | ![](https://github.com/suada-haji/Notify/blob/develop/screenshots/display_home.png) |
 | :---         |     :---:      |          ---: |
 | ![Image of Yaktocat](https://github.com/suada-haji/Notify/blob/develop/screenshots/search_fragment.png)   | ![Image of Yaktocat](https://github.com/suada-haji/Notify/blob/develop/screenshots/search_text.png)     | ![Image of Yaktocat](https://github.com/suada-haji/Notify/blob/develop/screenshots/display_note.png)    |
-| :---         |     :---:      |          ---: |
 | ![Image of Yaktocat](https://github.com/suada-haji/Notify/blob/develop/screenshots/edit_note.png)   | ![Image of Yaktocat](https://github.com/suada-haji/Notify/blob/develop/screenshots/share_note.png)     | ![Image of Yaktocat](https://github.com/suada-haji/Notify/blob/develop/screenshots/delete_note.png)    |
 
 ### Todos
