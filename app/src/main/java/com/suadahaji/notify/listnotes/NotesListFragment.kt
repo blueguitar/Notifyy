@@ -82,6 +82,11 @@ class NotesListFragment: Fragment() {
             }
         })
 
+        val sharedPref = activity!!.getSharedPreferences(getString(R.string.search_query), 0)
+        val editor = sharedPref.edit()
+        editor.putString(getString(R.string.search_query), "")
+        editor.apply()
+
         return binding.root
     }
 

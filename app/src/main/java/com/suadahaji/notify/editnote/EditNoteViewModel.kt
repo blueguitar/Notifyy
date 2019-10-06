@@ -64,7 +64,7 @@ class EditNoteViewModel(
 
     private suspend fun getNote(key: Long): Note? {
         return withContext(Dispatchers.IO) {
-             dataSource.getNoteById(key)
+            dataSource.getNoteById(key)
         }
     }
 
@@ -86,10 +86,14 @@ class EditNoteViewModel(
     fun onUpdateNewNote(noteTitle: String, noteContent: String) {
         uiScope.launch {
             val oldNote = _note.value ?: return@launch
-            oldNote.noteTitle = noteTitle
-            oldNote.noteContent = noteContent
-            oldNote.updatedDate = System.currentTimeMillis()
-            update(oldNote)
+            if (!oldNote.noteTitle.contentEquals(noteTitle) ||
+                !oldNote.noteContent.contentEquals(noteContent)
+            ) {
+                oldNote.noteTitle = noteTitle
+                oldNote.noteContent = noteContent
+                oldNote.updatedDate = System.currentTimeMillis()
+                update(oldNote)
+            }
         }
     }
 
