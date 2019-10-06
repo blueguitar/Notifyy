@@ -9,12 +9,25 @@
     1. Combining Viewmodels and Livedata
     2. Data persistence using **Room**
 6. RecyclerView -- to is efficiently reuse views
+7. Improve app performance with Kotlin coroutines
+
+#### About the app 
+User is able to :
+1. View notes created
+2. Search for a note
+3. Create or edit and save a note
+4. Share and Delete a note
 
 
 | ![Image of Yaktocat](https://github.com/suada-haji/Notify/blob/develop/screenshots/display_home.png) | ![Image of Yaktocat](https://github.com/suada-haji/Notify/blob/develop/screenshots/display_note.png) | ![Image of Yaktocat](https://github.com/suada-haji/Notify/blob/develop/screenshots/edit_note.png) |
 | :---         |     :---:      |          ---: |
 | ![Image of Yaktocat](https://github.com/suada-haji/Notify/blob/develop/screenshots/share_note.png)   | ![Image of Yaktocat](https://github.com/suada-haji/Notify/blob/develop/screenshots/search_fragment.png)     | ![Image of Yaktocat](https://github.com/suada-haji/Notify/blob/develop/screenshots/search_text.png)    |
 
+### Todos
+1. Connect to internet
+2. Persist data online
+3. Add login system
+4. Add tests
 
 ### License
 
