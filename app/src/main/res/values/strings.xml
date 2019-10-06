@@ -12,4 +12,5 @@
     <string name="share_note">%1$s \n %2$s</string>
     <string name="note_title_text">You have no notes yet</string>
     <string name="note_content_text">Tap + button to add a new note</string>
+    <string name="search_query">search-query</string>
 </resources>
