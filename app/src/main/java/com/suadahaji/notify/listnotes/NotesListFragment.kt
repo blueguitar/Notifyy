@@ -78,7 +78,7 @@ class NotesListFragment: Fragment() {
         notesListViewModel.notes.observe(viewLifecycleOwner, Observer {
             it?.let {
                 adapter.submitList(it)
-                binding.included.isVisible = it.size <= 0
+                binding.included.isVisible = it.isEmpty()
             }
         })
 
