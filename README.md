@@ -8,7 +8,7 @@
 5. Architecture Components:
     1. Combining Viewmodels and Livedata
     2. Data persistence using **Room**
-6. RecyclerView -- to is efficiently reuse views
+6. RecyclerView -- to efficiently reuse views
 7. Improve app performance with Kotlin coroutines
 
 #### About the app 
