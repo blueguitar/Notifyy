@@ -19,10 +19,14 @@ User is able to :
 4. Share and Delete a note
 
 
-| ![](https://github.com/suada-haji/Notify/blob/develop/screenshots/splash_screen.png) | ![](https://github.com/suada-haji/Notify/blob/develop/screenshots/empty_state.png) | ![](https://github.com/suada-haji/Notify/blob/develop/screenshots/display_home.png) |
-| :---         |     :---:      |          ---: |
-| ![](https://github.com/suada-haji/Notify/blob/develop/screenshots/search_fragment.png)   | ![](https://github.com/suada-haji/Notify/blob/develop/screenshots/search_text.png)     | ![](https://github.com/suada-haji/Notify/blob/develop/screenshots/display_note.png)    |
-| ![](https://github.com/suada-haji/Notify/blob/develop/screenshots/edit_note.png)   | ![](https://github.com/suada-haji/Notify/blob/develop/screenshots/share_note.png)     | ![](https://github.com/suada-haji/Notify/blob/develop/screenshots/delete_note.png)    |
+
+| ![](https://github.com/suada-haji/Notifyy/blob/staging/screenshots/splash_screen.png) | ![](https://github.com/suada-haji/Notifyy/blob/staging/screenshots/empty_state.png) | ![](https://github.com/suada-haji/Notifyy/blob/staging/screenshots/display_home.png) | ![](https://github.com/suada-haji/Notifyy/blob/staging/screenshots/search_fragment.png)   | ![](https://github.com/suada-haji/Notifyy/blob/staging/screenshots/search_text.png)     |
+| :---         |     :---:      |          ---: | ---: | ---: |
+
+
+|   ![](https://github.com/suada-haji/Notifyy/blob/staging/screenshots/display_note.png)    |![](https://github.com/suada-haji/Notifyy/blob/staging/screenshots/edit_note.png)   | ![](https://github.com/suada-haji/Notifyy/blob/staging/screenshots/share_note.png)     | ![](https://github.com/suada-haji/Notifyy/blob/staging/screenshots/delete_note.png)    |
+| :---         |     :---:      |          ---: | ---: | 
+
 
 ### Todos
 1. Connect to internet
